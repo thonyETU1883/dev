@@ -1,0 +1,11 @@
+Joueur : id nom 
+
+jeuton : id prix
+
+match: id IdJoueur1 IdJoueur2
+
+mise : id idJeuton idMatch miseJoueur1 miseJoueur2
+
+resultat : id idMatch scoreJoueur1 scoreJoueur2 moneyJoueur1 moneyJoueur2
+
+		
