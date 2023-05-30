@@ -1,0 +1,36 @@
+CREATE TABLE joueur(
+    id INTEGER AUTO_INCREMENT;
+    nom VARCHAR(255)
+);
+
+CREATE TABLE cheval(
+    id INTEGER AUTO_INCREMENT,
+    angle INTEGER,
+    width DOUBLE PRECISION,
+    height DOUBLE PRECISION,
+    couleur VARCHAR(255),
+    distance INTEGER,
+    vitesse INTEGER,
+    pourcentageEndurence INTEGER,
+    endurence INTEGER
+);
+
+CREATE TABLE jeu(
+    id INTEGER AUTO_INCREMENT,
+    idJoueur1 INTEGER,
+    idJoueur2 INTEGER,
+    idCheval1 INTEGER,
+    idCheval2 INTEGER,
+    mise DOUBLE PRECISION,
+    FOREIGN KEY(idJoueur1) REFERENCES joueur(id), 
+    FOREIGN KEY(idJoueur2) REFERENCES joueur(id),
+    FOREIGN KEY(idCheval1) REFERENCES cheval(id),
+    FOREIGN KEY(idCheval2) REFERENCES cheval(id) 
+);
+
+CREATE TABLE resultat(
+    idJeu INTEGER AUTO_INCREMENT,
+    idGagnant INTEGER,
+    lot DOUBLE PRECISION,
+    FOREIGN KEY(idGagnant) REFERENCES joueur(id),
+);
